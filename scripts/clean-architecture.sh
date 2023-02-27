@@ -23,21 +23,15 @@ touch src/domain/useCase/index.ts
 
 mkdir -p src/presentation
 mkdir -p src/presentation/core
-mkdir -p src/presentation/core/components
-touch src/presentation/core/components/index.ts
-mkdir -p src/presentation/core/components/atoms
-touch src/presentation/core/components/atoms/index.ts
-mkdir -p src/presentation/core/components/molecules
-touch src/presentation/core/components/molecules/index.ts
-mkdir -p src/presentation/core/components/organisms
-touch src/presentation/core/components/organisms/index.ts
+mv src/components src/presentation/core
 mkdir -p src/presentation/core/layout
 touch src/presentation/core/layout/index.ts
-mkdir -p src/presentation/core/utils
-touch src/presentation/core/utils/index.ts
+mv src/utils src/presentation/core
 mkdir -p src/presentation/theme
 touch src/presentation/theme/index.ts
 mkdir -p src/presentation/pages
 touch src/presentation/pages/index.ts
 mkdir -p src/presentation/routes
 touch src/presentation/routes/index.ts
+
+echo "Reorganized src/ to meet CleanArchitecture structure"
