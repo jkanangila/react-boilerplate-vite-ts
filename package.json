@@ -15,13 +15,14 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@iconify/react": "^4.1.0",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@iconify/react": "^4.1.0",
     "@mui/icons-material": "^5.11.9",
     "@mui/material": "^5.11.10",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.2"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",

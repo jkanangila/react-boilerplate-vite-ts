@@ -1,41 +1,42 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import Stack from "@mui/material/Stack";
 
 import { Button } from "./Button";
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Example/Button",
   component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
 } as ComponentMeta<typeof Button>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: "Button",
+export const Playground = Template.bind({});
+Playground.args = {
+  label: "Click me!",
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: "Button",
-};
+export const Variants: ComponentStory<typeof Button> = () => (
+  <Stack spacing={2} maxWidth={300}>
+    <Button variant="text" label="Text Button" />
+    <Button variant="contained" label="Contained Button" />
+    <Button variant="outlined" label="Outlined Button" />
+  </Stack>
+);
 
-export const Large = Template.bind({});
-Large.args = {
-  size: "large",
-  label: "Button",
-};
+export const Colors: ComponentStory<typeof Button> = () => (
+  <Stack spacing={2} maxWidth={300}>
+    <Button variant="contained" label="Primary" />
+    <Button variant="contained" color="secondary" label="Secondary" />
+    <Button variant="contained" color="success" label="Success" />
+    <Button variant="contained" color="error" label="Error" />
+  </Stack>
+);
 
-export const Small = Template.bind({});
-Small.args = {
-  size: "small",
-  label: "Button",
-};
+export const Sizes: ComponentStory<typeof Button> = () => (
+  <Stack spacing={2} maxWidth={300}>
+    <Button variant="contained" size="small" label="Small" />
+    <Button variant="contained" size="medium" label="Medium" />
+    <Button variant="contained" size="large" label="Large" />
+  </Stack>
+);
