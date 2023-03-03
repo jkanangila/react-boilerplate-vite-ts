@@ -1,47 +1,22 @@
 import React from "react";
-import { Button as ChakraButton, ButtonProps } from "@chakra-ui/react";
+import { Button as ChakraButton, ButtonProps as ChakraButtonProps } from "@chakra-ui/react";
 
-interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: "small" | "medium" | "large";
-  /**
-   * Button contents
-   */
+// Only include variant, size, color from MuiButtonProps
+type ButtonBaseProps = Pick<ChakraButtonProps, "variant" | "size" | "color">;
+
+export interface ButtonProps extends ButtonBaseProps {
   label: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
 }
 
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({
-  primary = false,
-  size = "medium",
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) => {
-  const mode = primary ? "storybook-button--primary" : "storybook-button--secondary";
-  return (
-    <ChakraButton
-      type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(" ")}
-      style={{ backgroundColor }}
-      {...props}>
-      {label}
-    </ChakraButton>
-  );
+export const Button = ({ label, ...rest }: ButtonProps) => (
+  <ChakraButton {...rest}>{label}</ChakraButton>
+);
+
+Button.defaultProps = {
+  variant: "ghost",
+  size: "md",
+  color: "blue.50",
 };
