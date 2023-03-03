@@ -1,7 +1,7 @@
-const { exec } = require("child_process");
-const { writeFile } = require("fs");
+import { exec } from "child_process";
+import { writeFile } from "fs";
 
-function execute_shell_cmd(cmd) {
+export function executeShellCmd(cmd) {
   exec(cmd, (err, stdout, stderr) => {
     if (err) throw err;
 
@@ -13,7 +13,7 @@ function execute_shell_cmd(cmd) {
   });
 }
 
-function writeJson(file, data) {
+export function writeJson(file, data) {
   let output;
   if (typeof data == !"string") {
     output = JSON.stringify(data);
