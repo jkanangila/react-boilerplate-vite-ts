@@ -18,5 +18,5 @@ export const Button = ({ label, ...rest }: ButtonProps) => (
 Button.defaultProps = {
   variant: "solid",
   size: "md",
-  color: "blue.50",
+  color: "blue",
 };

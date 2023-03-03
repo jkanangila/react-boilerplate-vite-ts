@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Heading, Text, Link } from "@chakra-ui/react";
+import { Box, Container, Heading, Text, Link, List, ListItem } from "@chakra-ui/react";
 
 import { Header, User } from "./Header";
 
@@ -17,7 +17,9 @@ export const Page = () => {
 
       <Container as="section">
         <Box pt={3}>
-          <Heading size="lg">Pages in Storybook</Heading>
+          <Heading size="xl" my={2}>
+            Pages in Storybook
+          </Heading>
           <Text fontSize="sm">
             We recommend building UIs with a{" "}
             <Link href="https://componentdriven.org" target="_blank" rel="noopener noreferrer">
@@ -30,16 +32,16 @@ export const Page = () => {
             needing to navigate to them in your app. Here are some handy patterns for managing page
             data in Storybook:
           </Text>
-          <ul>
-            <li>
+          <List>
+            <ListItem>
               Use a higher-level connected component. Storybook helps you compose such data from the
               "args" of child component stories
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
               Assemble data in the page component from your services. You can mock these services
               out using Storybook.
-            </li>
-          </ul>
+            </ListItem>
+          </List>
           <Text fontSize="sm">
             Get a guided tutorial on component-driven development at{" "}
             <Link

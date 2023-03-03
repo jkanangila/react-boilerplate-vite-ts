@@ -28,9 +28,9 @@ export const Variants: ComponentStory<typeof Button> = () => (
 
 export const Sizes: ComponentStory<typeof Button> = () => (
   <VStack spacing={2} maxWidth={300}>
-    <Button variant="solid" size="xs" label="Large" />
-    <Button variant="solid" size="sm" label="Large" />
-    <Button variant="solid" size="md" label="Medium" />
-    <Button variant="solid" size="lg" label="Small" />
+    <Button variant="solid" size="xs" label="XS" />
+    <Button variant="solid" size="sm" label="SM" />
+    <Button variant="solid" size="md" label="MD" />
+    <Button variant="solid" size="lg" label="LG" />
   </VStack>
 );

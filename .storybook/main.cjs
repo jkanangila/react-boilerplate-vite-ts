@@ -4,14 +4,13 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "@snek-at/storybook-addon-chakra-ui",
   ],
   framework: "@storybook/react",
   core: {
     builder: "@storybook/builder-vite",
   },
   features: {
-    storyStoreV7: true,
+    storyStoreV7: false,
     emotionAlias: false,
   },
 };
