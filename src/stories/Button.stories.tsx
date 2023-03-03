@@ -1,41 +1,36 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { VStack } from "@chakra-ui/react";
 
 import { Button } from "./Button";
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "Example/Button",
   component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
 } as ComponentMeta<typeof Button>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: "Button",
+export const Playground = Template.bind({});
+Playground.args = {
+  label: "Click me!",
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: "Button",
-};
+export const Variants: ComponentStory<typeof Button> = () => (
+  <VStack spacing={2} maxWidth={300}>
+    <Button variant="ghost" label="Ghost Button" />
+    <Button variant="link" label="Link Button" />
+    <Button variant="outline" label="Outline Button" />
+    <Button variant="solid" label="Solid Button" />
+    <Button variant="unstyled" label="Unstyled Button" />
+  </VStack>
+);
 
-export const Large = Template.bind({});
-Large.args = {
-  size: "large",
-  label: "Button",
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: "small",
-  label: "Button",
-};
+export const Sizes: ComponentStory<typeof Button> = () => (
+  <VStack spacing={2} maxWidth={300}>
+    <Button variant="solid" size="xs" label="Large" />
+    <Button variant="solid" size="sm" label="Large" />
+    <Button variant="solid" size="md" label="Medium" />
+    <Button variant="solid" size="lg" label="Small" />
+  </VStack>
+);
