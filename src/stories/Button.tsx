@@ -1,5 +1,5 @@
 import React from "react";
-import "./button.css";
+import { Button as ChakraButton, ButtonProps } from "@chakra-ui/react";
 
 interface ButtonProps {
   /**
@@ -36,12 +36,12 @@ export const Button = ({
 }: ButtonProps) => {
   const mode = primary ? "storybook-button--primary" : "storybook-button--secondary";
   return (
-    <button
+    <ChakraButton
       type="button"
       className={["storybook-button", `storybook-button--${size}`, mode].join(" ")}
       style={{ backgroundColor }}
       {...props}>
       {label}
-    </button>
+    </ChakraButton>
   );
 };
