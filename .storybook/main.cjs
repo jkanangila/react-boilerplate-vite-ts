@@ -4,7 +4,7 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "@chakra-ui/storybook-addon",
+    "@snek-at/storybook-addon-chakra-ui",
   ],
   framework: "@storybook/react",
   core: {
