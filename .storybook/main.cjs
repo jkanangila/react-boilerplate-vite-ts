@@ -10,7 +10,7 @@ module.exports = {
     builder: "@storybook/builder-vite",
   },
   features: {
-    storyStoreV7: false,
+    storyStoreV7: true,
     emotionAlias: false,
   },
 };
