@@ -39,7 +39,8 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps
       <div>
         {user ? (
           <>
-            <span className="welcome">
+            {/* snipped for brevity */}
+            <span className="welcome dark:text-white">
               Welcome, <b>{user.name}</b>!
             </span>
             <Button size="small" onClick={onLogout} label="Log out" />
@@ -47,7 +48,7 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps
         ) : (
           <>
             <Button size="small" onClick={onLogin} label="Log in" />
-            <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
+            <Button variant="primary" size="small" onClick={onCreateAccount} label="Sign up" />
           </>
         )}
       </div>
